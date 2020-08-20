@@ -34,7 +34,7 @@ int main() {
         A *A_PTR = new A(a);
         A *w = new A(A_PTR);
  
-        cout << b->B_ptr << endl;
+        cout << A_PTR->B_ptr << endl;
 
         delete a;
 
