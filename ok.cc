@@ -31,16 +31,19 @@ int main() {
 
         B *a = new B(c);
 
-        A *b = new A(a);
-        A *w = new A(b);
+        A *A_PTR = new A(a);
+        A *w = new A(A_PTR);
  
         cout << b->B_ptr << endl;
 
         delete a;
 
+        delete z; 
+  
         delete c; 
 
-        cout << b->B_ptr << endl;
+        cout << A_PTR->B_ptr->int_ptr << endl;      //UAF where B_ptr is freed
 
+        cout << z->ptr << endl;           //UAF where z is freed
         return 0;
 }
